@@ -1,0 +1,102 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# AI-IDS Security Operations Platform
+#
+# Usage:
+#   docker compose up -d           # start everything
+#   docker compose logs -f         # tail logs
+#   docker compose down            # stop
+#   docker compose down -v         # stop + wipe persistent volumes
+#
+# Access:
+#   Frontend  →  http://localhost:8501
+#   Backend   →  https://localhost:8000
+#
+# Configure secrets in .env before starting (copy from .env.example):
+#   cp .env.example .env  &&  nano .env
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── Backend (FastAPI + AI Autonomous Agent) ─────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: siem-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - siem-db:/app/db
+      - siem-data:/app/data
+      - siem-certs:/app/certs
+      - siem-backups:/app/backups
+      - siem-reports:/app/reports
+    environment:
+      - SERVER_PORT=8000
+      - LOG_LEVEL=INFO
+      - AI_ENABLED=true
+      - DB_PATH=/app/db/siem.db
+      - SSL_KEYFILE=/app/certs/key.pem
+      - SSL_CERTFILE=/app/certs/cert.pem
+      - DATA_DIR=/app/data
+      # AI Autonomous Agent
+      - AI_AGENT_INTERVAL=120
+      - AI_AGENT_BATCH=20
+      - OFFICE_HOURS_START=8
+      - OFFICE_HOURS_END=18
+      - AI_AUTO_BLOCK=true
+      - AI_AUTO_BLOCK_CONFIDENCE=0.85
+      - AI_DIGEST_INTERVAL=3600
+    env_file:
+      - .env
+    networks:
+      - siem-net
+    healthcheck:
+      test: ["CMD", "curl", "-fsk", "https://localhost:8000/api/v1/stats"]
+      interval: 30s
+      timeout: 10s
+      start_period: 20s
+      retries: 3
+
+  # ── Frontend (Streamlit) ────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: siem-frontend
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      - siem-frontend-data:/app/data
+    environment:
+      - SIEM_BACKEND_URL=https://backend:8000
+      - AI_ENABLED=true
+      - OPENROUTER_MODEL=deepseek/deepseek-chat
+    env_file:
+      - .env
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - siem-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+
+# ─────────────────────────────────────────────────────────────────────────────
+networks:
+  siem-net:
+    driver: bridge
+
+volumes:
+  siem-db:       # SQLite database
+  siem-data:     # Runtime data (logs, playbooks)
+  siem-certs:    # Generated SSL certificates
+  siem-backups:  # DB snapshots
+  siem-reports:  # Generated PDF reports
+  siem-frontend-data: # Frontend DB & session data

@@ -1,0 +1,63 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+.venv/
+
+# ── Environment ──
+.env
+.env.local
+.env.production
+
+# ── Database ──
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ── SSL Certs ──
+*.pem
+*.key
+*.crt
+*.p12
+
+# ── Logs ──
+*.log
+logs/
+
+# ── Reports ──
+reports/*.pdf
+reports/*.html
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Docker ──
+docker-compose.override.yml
+
+# ── Backups ──
+backups/
+
+# ── Agent data ──
+agents.zip
+
+# ── Misc ──
+*.docx
+*.zip
+log_files/

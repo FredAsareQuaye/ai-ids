@@ -1,0 +1,59 @@
+services:
+  - type: web
+    name: ai-ids-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    envVars:
+      - key: SERVER_PORT
+        value: 8000
+      - key: LOG_LEVEL
+        value: INFO
+      - key: AI_ENABLED
+        value: "true"
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: deepseek/deepseek-chat
+      - key: SIEM_API_KEY
+        generateValue: true
+      - key: AI_AGENT_INTERVAL
+        value: "60"
+      - key: AI_AGENT_BATCH
+        value: "200"
+      - key: OFFICE_HOURS_START
+        value: "8"
+      - key: OFFICE_HOURS_END
+        value: "18"
+      - key: AI_AUTO_BLOCK
+        value: "true"
+      - key: AI_AUTO_BLOCK_CONFIDENCE
+        value: "0.85"
+      - key: AI_DIGEST_INTERVAL
+        value: "3600"
+      - key: SYSLOG_ENABLED
+        value: "true"
+      - key: SYSLOG_HOST
+        value: "0.0.0.0"
+      - key: SYSLOG_PORT
+        value: "5140"
+      - key: FEED_ENABLED
+        value: "true"
+      - key: FEED_SYNC_INTERVAL_HOURS
+        value: "6"
+      - key: DEDUP_ENABLED
+        value: "true"
+      - key: DEDUP_WINDOW_SECONDS
+        value: "600"
+    disk:
+      name: siem-db
+      mountPath: /app/db
+      sizeGB: 10
+  - type: web
+    name: ai-ids-frontend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.frontend
+    envVars:
+      - key: SIEM_BACKEND_URL
+        fromService:
+          name: ai-ids-backend
+          property: host

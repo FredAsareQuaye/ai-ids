@@ -1,0 +1,107 @@
+[
+  {
+    "id": "block-brute-force",
+    "name": "Auto-block Brute Force IPs",
+    "description": "Blocks source IP in the system firewall when brute force is detected.",
+    "trigger_rule": "BRUTE_FORCE",
+    "min_severity": "HIGH",
+    "enabled": true,
+    "actions": [
+      {
+        "type": "block_ip"
+      },
+      {
+        "type": "snapshot_db"
+      },
+      {
+        "type": "log_event",
+        "message": "Playbook: Auto-blocked {source} for brute force (T1110)"
+      }
+    ]
+  },
+  {
+    "id": "snapshot-log-tamper",
+    "name": "Emergency Snapshot on Log Tampering",
+    "description": "Preserves the database immediately when log tampering is detected.",
+    "trigger_rule": "LOG_TAMPERING",
+    "min_severity": "CRITICAL",
+    "enabled": true,
+    "actions": [
+      {
+        "type": "snapshot_db"
+      },
+      {
+        "type": "log_event",
+        "message": "Playbook: Emergency DB snapshot \u2014 log tampering from {source} (T1070)"
+      }
+    ]
+  },
+  {
+    "id": "snapshot-credential-dump",
+    "name": "Snapshot on Credential Dumping",
+    "description": "Takes evidence snapshot when credential dumping activity is detected.",
+    "trigger_rule": "CREDENTIAL_DUMP",
+    "min_severity": "CRITICAL",
+    "enabled": true,
+    "actions": [
+      {
+        "type": "snapshot_db"
+      },
+      {
+        "type": "log_event",
+        "message": "Playbook: Credential dumping from {source} \u2014 snapshot taken (T1003)"
+      }
+    ]
+  },
+  {
+    "id": "block-port-scan",
+    "name": "Block Port Scanners",
+    "description": "Blocks source IP when a port scan is detected. Disabled by default.",
+    "trigger_rule": "PORT_SCAN",
+    "min_severity": "MEDIUM",
+    "enabled": false,
+    "actions": [
+      {
+        "type": "block_ip"
+      },
+      {
+        "type": "log_event",
+        "message": "Playbook: Blocked {source} for port scanning (T1046)"
+      }
+    ]
+  },
+  {
+    "id": "snapshot-malware",
+    "name": "Snapshot on Malware Execution",
+    "description": "Preserves evidence when suspicious execution is detected.",
+    "trigger_rule": "MALWARE_EXECUTION",
+    "min_severity": "HIGH",
+    "enabled": true,
+    "actions": [
+      {
+        "type": "snapshot_db"
+      },
+      {
+        "type": "log_event",
+        "message": "Playbook: Malware/suspicious execution from {source} (T1059)"
+      }
+    ]
+  },
+  {
+    "id": "snapshot-persistence",
+    "name": "Snapshot on Persistence Installation",
+    "description": "Preserves evidence when a persistence mechanism is installed.",
+    "trigger_rule": "PERSISTENCE",
+    "min_severity": "HIGH",
+    "enabled": true,
+    "actions": [
+      {
+        "type": "snapshot_db"
+      },
+      {
+        "type": "log_event",
+        "message": "Playbook: Persistence mechanism installed from {source} (T1547)"
+      }
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/venv/
+**/.venv/
+**/*.egg-info/
+
+# Data & secrets (use Docker volumes or .env)
+server/siem.db
+server/certs/
+frontend/data/*.db
+.env
+.env.local
+
+# Logs and temp files
+**/*.log
+**/.DS_Store
+**/Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docs
+*.md
+*.rst
+docs/
+
+# Test artifacts
+**/.pytest_cache/
+**/htmlcov/
+**/.coverage
+
+# IDE
+.vscode/
+.idea/
+**/*.swp
+
+# Misc
+agents.zip
+*.zip
+*.docx
+log_files/

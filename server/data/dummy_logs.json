@@ -1,0 +1,1602 @@
+[
+  {
+    "timestamp": "2026-06-26T17:38:43",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.231",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.231",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:38:39",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.22",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.22",
+      "target_ip": "192.168.1.86",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:38:34",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user54"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:39",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.18"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:33",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.247",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.247",
+      "target_ip": "192.168.1.128",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:28",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.168",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.168",
+      "target_ip": "192.168.1.230",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:23",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.155",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:18",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "345GB",
+      "duration": "29 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:13",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.236"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:08",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user18",
+      "ip": "192.168.1.93",
+      "session_id": "sess_90742"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:13:02",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.176",
+    "severity": "high",
+    "details": {
+      "attempts": 6,
+      "ip": "192.168.1.176",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:58",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_923.exe",
+      "hash": "deadbeef7781",
+      "user": "user58",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:54",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.43",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.43",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:48",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.249",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.249",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:44",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "231GB",
+      "duration": "14 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:39",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.38",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:34",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.148",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:30",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.202",
+    "severity": "high",
+    "details": {
+      "attempts": 7,
+      "ip": "192.168.1.202",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:24",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.75",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:19",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_329.exe",
+      "hash": "deadbeef5494",
+      "user": "user33",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:14",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "626GB",
+      "duration": "52 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:10",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.150",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.150",
+      "target_ip": "192.168.1.19",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:04",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.78",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.78",
+      "target_ip": "192.168.1.84",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:12:00",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user27",
+      "ip": "192.168.1.190",
+      "session_id": "sess_92430"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:55",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.241",
+    "severity": "high",
+    "details": {
+      "attempts": 12,
+      "ip": "192.168.1.241",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:50",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_249.exe",
+      "hash": "deadbeef1633",
+      "user": "user92",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:44",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user61"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:40",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "879GB",
+      "duration": "41 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:36",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user7"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:31",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.138",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.138",
+      "target_ip": "192.168.1.100",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:25",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user65",
+      "ip": "192.168.1.238",
+      "session_id": "sess_76432"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:20",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "174GB",
+      "duration": "31 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:15",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.64"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:09",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.28"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:11:04",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_491.exe",
+      "hash": "deadbeef7225",
+      "user": "user67",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:59",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_27.exe",
+      "hash": "deadbeef6804",
+      "user": "user67",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:53",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.217",
+    "severity": "high",
+    "details": {
+      "attempts": 4,
+      "ip": "192.168.1.217",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:48",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.81",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.81",
+      "target_ip": "192.168.1.137",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:43",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_700.exe",
+      "hash": "deadbeef4904",
+      "user": "user33",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:37",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.183",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.183",
+      "target_ip": "192.168.1.225",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:33",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.44",
+    "severity": "high",
+    "details": {
+      "attempts": 7,
+      "ip": "192.168.1.44",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:27",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user9",
+      "ip": "192.168.1.7",
+      "session_id": "sess_75146"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:23",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "481GB",
+      "duration": "48 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:18",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.91",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:14",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user77"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:10",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user19",
+      "ip": "192.168.1.254",
+      "session_id": "sess_93542"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:05",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "445GB",
+      "duration": "47 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:10:00",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user32"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:56",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.231"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:51",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.167"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:46",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.84",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.84",
+      "target_ip": "192.168.1.158",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:41",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.248",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.248",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:35",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "390GB",
+      "duration": "59 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:30",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "400GB",
+      "duration": "39 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:26",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.253",
+    "severity": "high",
+    "details": {
+      "attempts": 5,
+      "ip": "192.168.1.253",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:22",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.106",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:17",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "491GB",
+      "duration": "35 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:11",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user100"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:06",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.202",
+    "severity": "high",
+    "details": {
+      "attempts": 7,
+      "ip": "192.168.1.202",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:09:02",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.192",
+    "severity": "high",
+    "details": {
+      "attempts": 7,
+      "ip": "192.168.1.192",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:57",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user68",
+      "ip": "192.168.1.50",
+      "session_id": "sess_96161"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:52",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user9"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:46",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.180",
+    "severity": "high",
+    "details": {
+      "attempts": 11,
+      "ip": "192.168.1.180",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:42",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.13",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.13",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:37",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user91",
+      "ip": "192.168.1.99",
+      "session_id": "sess_29761"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:31",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.190",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.190",
+      "target_ip": "192.168.1.71",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:27",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_459.exe",
+      "hash": "deadbeef1764",
+      "user": "user71",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:22",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user80"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:16",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_992.exe",
+      "hash": "deadbeef6165",
+      "user": "user5",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:12",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.241",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.241",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:06",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.27"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:08:02",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user4"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:57",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.3",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:52",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user68"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:47",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "603GB",
+      "duration": "36 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:42",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.142",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.142",
+      "target_ip": "192.168.1.63",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:37",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.106",
+    "severity": "high",
+    "details": {
+      "attempts": 11,
+      "ip": "192.168.1.106",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:33",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.84",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.84",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:29",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.142",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:25",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user28"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:20",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.207",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.207",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:14",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_206.exe",
+      "hash": "deadbeef3968",
+      "user": "user98",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:10",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.231",
+    "severity": "high",
+    "details": {
+      "attempts": 5,
+      "ip": "192.168.1.231",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:06",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.77",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.77",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:07:00",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.23",
+    "severity": "high",
+    "details": {
+      "attempts": 11,
+      "ip": "192.168.1.23",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:55",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.249"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:51",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user93"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:45",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user14",
+      "ip": "192.168.1.167",
+      "session_id": "sess_34932"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:40",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user1"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:35",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.41",
+    "severity": "high",
+    "details": {
+      "attempts": 3,
+      "ip": "192.168.1.41",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:29",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.13",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.13",
+      "target_ip": "192.168.1.145",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:24",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user74"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:19",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.119"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T17:06:14",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user15",
+      "ip": "192.168.1.33",
+      "session_id": "sess_11030"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:38",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_160.exe",
+      "hash": "deadbeef2316",
+      "user": "user17",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:33",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.168"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:27",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.18"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:23",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "952GB",
+      "duration": "19 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:19",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user54"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:13",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.196",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:08",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_959.exe",
+      "hash": "deadbeef9266",
+      "user": "user71",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:59:03",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_10.exe",
+      "hash": "deadbeef9304",
+      "user": "user86",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:59",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.235",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.235",
+      "target_ip": "192.168.1.231",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:53",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.188"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:49",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.159",
+    "severity": "high",
+    "details": {
+      "attempts": 9,
+      "ip": "192.168.1.159",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:44",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.169",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:40",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.201",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:36",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user71",
+      "ip": "192.168.1.160",
+      "session_id": "sess_45417"
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:30",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.128",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.128",
+      "target_ip": "192.168.1.29",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-10-03T16:58:26",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.109"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:32:57",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "186GB",
+      "duration": "29 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:32:53",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.93"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:32:48",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user10"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:32:43",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user66",
+      "ip": "192.168.1.243",
+      "session_id": "sess_14441"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:32:38",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_181.exe",
+      "hash": "deadbeef9097",
+      "user": "user96",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:32:32",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.190",
+    "severity": "high",
+    "details": {
+      "attempts": 10,
+      "ip": "192.168.1.190",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:27:26",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user48"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:27:11",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.57"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:26:56",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.114",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.114",
+      "target_ip": "192.168.1.3",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:26:41",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.33",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:10:48",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.20",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.20",
+      "target_ip": "192.168.1.41",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:10:33",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.17",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.17",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:10:18",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user94",
+      "ip": "192.168.1.115",
+      "session_id": "sess_91818"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:10:03",
+    "source": "antivirus",
+    "message": "Ransomware activity detected",
+    "severity": "high",
+    "details": {
+      "file": "document_944.exe",
+      "hash": "deadbeef3580",
+      "user": "user89",
+      "location": "Workstation"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:09:48",
+    "source": "system",
+    "message": "System backup completed successfully",
+    "severity": "low",
+    "details": {
+      "size": "228GB",
+      "duration": "35 minutes"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:09:33",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user44",
+      "ip": "192.168.1.154",
+      "session_id": "sess_25122"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:09:18",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.140",
+    "severity": "high",
+    "details": {
+      "attempts": 5,
+      "ip": "192.168.1.140",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:09:03",
+    "source": "auth",
+    "message": "Successful user login",
+    "severity": "low",
+    "details": {
+      "user": "user33",
+      "ip": "192.168.1.95",
+      "session_id": "sess_51342"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:08:48",
+    "source": "network",
+    "message": "Port scanning detected from 203.0.113.92",
+    "severity": "medium",
+    "details": {
+      "source_ip": "203.0.113.92",
+      "target_ip": "192.168.1.127",
+      "ports": [
+        "22",
+        "80",
+        "443",
+        "3389"
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:08:33",
+    "source": "ids",
+    "message": "SQL injection attempt detected from 203.0.113.37",
+    "severity": "high",
+    "details": {
+      "url": "/api/users",
+      "ip": "203.0.113.37",
+      "payload": "UNION SELECT * FROM users",
+      "location": "Unknown Location"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:08:18",
+    "source": "system",
+    "message": "Unusual process execution detected",
+    "severity": "medium",
+    "details": {
+      "process": "powershell.exe",
+      "args": "-enc base64encodedcommand",
+      "user": "user35"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:08:03",
+    "source": "web",
+    "message": "Normal web request processed",
+    "severity": "low",
+    "details": {
+      "url": "/api/status",
+      "status": 200,
+      "ip": "192.168.1.127",
+      "user_agent": "Mozilla/5.0"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T13:07:48",
+    "source": "auth",
+    "message": "Admin login from unusual location",
+    "severity": "medium",
+    "details": {
+      "user": "admin",
+      "location": "Unknown Location",
+      "ip": "203.0.113.246"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T12:25:46",
+    "source": "firewall",
+    "message": "Multiple failed SSH login attempts from IP 192.168.1.248",
+    "severity": "high",
+    "details": {
+      "attempts": 7,
+      "ip": "192.168.1.248",
+      "port": 22,
+      "location": "Unknown Location"
+    }
+  }
+]
