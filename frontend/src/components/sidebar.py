@@ -5,6 +5,7 @@ def render_sidebar():
         # Initialize view if not set
         if 'view' not in st.session_state:
             st.session_state.view = 'main'
+            st.query_params["view"] = "main"
             
         # Define view groups
         main_views = ['main', 'logs_overview', 'ai_overview', 'vuln_overview', 'gemini_analysis', 'ai_vuln_test', 'sniper_scan', 'multi_scan', 'scan_results']

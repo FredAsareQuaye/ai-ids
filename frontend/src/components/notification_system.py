@@ -212,7 +212,7 @@ def render_live_log_monitor():
         api_url = f"{BACKEND_URL}/api/v1/threats/severity/{severity_filter.lower()}"
 
     try:
-        resp = requests.get(api_url, verify=VERIFY_SSL, timeout=8)
+        resp = requests.get(api_url, verify=VERIFY_SSL, timeout=30)
         if resp.status_code != 200:
             st.warning(f"Backend returned status {resp.status_code}")
             return

@@ -487,6 +487,7 @@ class ScanAnalyzer:
                         st.session_state.analyzer_scan_id = None
                         # Redirect to vulnerability overview
                         st.session_state.view = "vuln_overview"
+                        st.query_params["view"] = "vuln_overview"
                         st.rerun()
                     else:
                         st.error("Failed to save analysis.")
@@ -496,4 +497,5 @@ class ScanAnalyzer:
                     # Clear the analyzer scan ID so we don't automatically analyze again
                     st.session_state.analyzer_scan_id = None
                     st.session_state.view = "vuln_overview"
+                    st.query_params["view"] = "vuln_overview"
                     st.rerun()

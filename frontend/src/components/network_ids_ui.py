@@ -56,7 +56,7 @@ EVENT_ICONS = {
 def _get(path, params=None):
     try:
         r = requests.get(f"{BACKEND}{path}", params=params,
-                         verify=VERIFY_SSL, timeout=12)
+                         verify=VERIFY_SSL, timeout=30)
         if r.status_code == 200:
             return r.json()
     except Exception:
@@ -75,7 +75,7 @@ def _post(path, json_body=None, params=None):
 
 def _patch(path):
     try:
-        r = requests.patch(f"{BACKEND}{path}", verify=VERIFY_SSL, timeout=10)
+        r = requests.patch(f"{BACKEND}{path}", verify=VERIFY_SSL, timeout=30)
         return r.status_code == 200
     except Exception:
         return False

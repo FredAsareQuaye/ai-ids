@@ -229,6 +229,7 @@ def render_full_logs(session, backend_url, on_alert_click):
     # Custom alert click handler
     def handle_alert_click(threat):
         st.session_state.view = 'detail'  # Set view to detail
+        st.query_params["view"] = "detail"
         on_alert_click(threat)  # Call original handler
     
     # If we're supposed to show details, let the main app handle it by returning early
@@ -427,6 +428,7 @@ def render_full_logs(session, backend_url, on_alert_click):
                             # Set the selected alert and view for detailed view
                             st.session_state.selected_alert = threat_dict
                             st.session_state.view = 'detail'
+                            st.query_params["view"] = "detail"
                             st.session_state.show_details = True
                             st.rerun()
                     
@@ -514,6 +516,7 @@ def on_alert_click(alert):
             'type': alert.get('type', '')
         }
         st.session_state.view = "detail"
+        st.query_params["view"] = "detail"
         st.session_state.selected_alert = clean_alert
         st.session_state.came_from = "logs"  # Track that we came from logs page
         st.rerun()

@@ -784,6 +784,7 @@ class ScanResultsPage:
             st.error("No scan results available. Please run a scan first.")
             if st.button("⬅️ Return to Scanner", key="no_results_btn"):
                 st.session_state.view = "vuln_overview"
+                st.query_params["view"] = "vuln_overview"
                 st.rerun()
             return
         
@@ -994,6 +995,7 @@ class ScanResultsPage:
                         # Option to navigate to vulnerability overview
                         if st.button("📊 View in Vulnerability Overview"):
                             st.session_state.view = "vuln_overview"
+                            st.query_params["view"] = "vuln_overview"
                             st.rerun()
                     else:
                         st.error("Failed to save results to database.")
@@ -1002,6 +1004,7 @@ class ScanResultsPage:
         with col3:
             if st.button("🔙 Return to Overview", use_container_width=True):
                 st.session_state.view = "vuln_overview"
+                st.query_params["view"] = "vuln_overview"
                 st.rerun()
         
         # Display AI summary if available

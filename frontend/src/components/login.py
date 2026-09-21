@@ -467,6 +467,7 @@ def render_login():
                         
                         # Set the initial view to main after successful login
                         st.session_state.view = 'main'
+                        st.query_params["view"] = "main"
                         st.success(f"Welcome back, {user_data['username']}!")
                         time.sleep(1)
                         st.rerun()
@@ -486,6 +487,7 @@ def render_login():
                                 save_session_token(username, token)
                             
                             st.session_state.view = 'main'
+                            st.query_params["view"] = "main"
                             st.success(f"Welcome, {username}!")
                             time.sleep(1)
                             st.rerun()
@@ -843,3 +845,4 @@ def render_user_management():
     st.session_state.logged_in = False
     st.session_state.session_initialized = False
     st.session_state.view = 'main'  # Will redirect to login since not authenticated
+    st.query_params["view"] = "main"

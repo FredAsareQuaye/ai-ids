@@ -84,6 +84,7 @@ def main():
         st.session_state.view = url_view
     elif "view" not in st.session_state:
         st.session_state.view = "overview"
+        st.query_params["view"] = "overview"
     if "settings" not in st.session_state:
         st.session_state.settings = {}
 
@@ -590,7 +591,7 @@ def render_content(user):
 # Overview Dashboard (Wazuh-style)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _api(path, params=None, timeout=6):
+def _api(path, params=None, timeout=30):
     try:
         import time as _time
         p = dict(params or {})
@@ -888,6 +889,7 @@ def _render_module_tiles(total_events, crit, iocs, cases, noise, corr):
                 )
                 if st.button(f"Open {name}", key=f"tile_{view}", use_container_width=True):
                     st.session_state.view = view
+                    st.query_params["view"] = view
                     st.rerun()
 
 
@@ -899,6 +901,7 @@ def _render_agent_panel(agents_raw):
                     unsafe_allow_html=True)
         if st.button("View Agents", key="goto_agents_dash"):
             st.session_state.view = "agents"
+            st.query_params["view"] = "agents"
             st.rerun()
         return
 
@@ -938,6 +941,7 @@ def _render_agent_panel(agents_raw):
 
     if st.button("Manage Agents", key="goto_agents_main"):
         st.session_state.view = "agents"
+        st.query_params["view"] = "agents"
         st.rerun()
 
 
@@ -973,6 +977,7 @@ def _render_mitre_panel(corr_raw):
 
     if st.button("View All Correlations", key="goto_corr"):
         st.session_state.view = "correlations"
+        st.query_params["view"] = "correlations"
         st.rerun()
 
 
@@ -1011,6 +1016,7 @@ def _render_alert_feed(events):
 
     if st.button("View All Alerts", key="goto_full_logs"):
         st.session_state.view = "full_logs"
+        st.query_params["view"] = "full_logs"
         st.rerun()
 
 

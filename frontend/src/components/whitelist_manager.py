@@ -46,7 +46,7 @@ def _headers() -> dict:
 
 def _get(path):
     try:
-        r = requests.get(f"{BACKEND}{path}", verify=VERIFY_SSL, timeout=10)
+        r = requests.get(f"{BACKEND}{path}", verify=VERIFY_SSL, timeout=30)
         if r.status_code == 200:
             return r.json()
     except Exception as e:

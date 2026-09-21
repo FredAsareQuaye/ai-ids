@@ -29,6 +29,7 @@ def render_ai_logs_overview():
             def on_alert_click(alert):
                 st.session_state.selected_alert = alert
                 st.session_state.view = 'detail'
+                st.query_params["view"] = "detail"
                 st.session_state.came_from = "logs"  # Track that we came from logs page
                 st.rerun()
             

@@ -751,7 +751,7 @@ class AIVulnerabilityTester:
             result = subprocess.run(['echo', 'deepseek-chat deepseek-reasoner'], 
                                  capture_output=True, 
                                  text=True,
-                                 timeout=10)
+                                 timeout=30)
             if result.returncode == 0:
                 # Parse the output to extract model names
                 lines = result.stdout.strip().split('\n')

@@ -59,7 +59,7 @@ def _auth_headers() -> dict:
 
 def _get(path):
     try:
-        r = requests.get(f"{BACKEND}{path}", verify=VERIFY_SSL, timeout=10)
+        r = requests.get(f"{BACKEND}{path}", verify=VERIFY_SSL, timeout=30)
         if r.status_code == 200:
             return r.json()
     except Exception as e:
@@ -70,7 +70,7 @@ def _get(path):
 def _post(path, payload):
     try:
         return requests.post(f"{BACKEND}{path}", json=payload,
-                             headers=_auth_headers(), verify=VERIFY_SSL, timeout=10)
+                             headers=_auth_headers(), verify=VERIFY_SSL, timeout=30)
     except Exception as e:
         st.error(f"Request error: {e}")
         return None
@@ -79,7 +79,7 @@ def _post(path, payload):
 def _put(path, payload):
     try:
         return requests.put(f"{BACKEND}{path}", json=payload,
-                            headers=_auth_headers(), verify=VERIFY_SSL, timeout=10)
+                            headers=_auth_headers(), verify=VERIFY_SSL, timeout=30)
     except Exception as e:
         st.error(f"Request error: {e}")
         return None
@@ -88,7 +88,7 @@ def _put(path, payload):
 def _delete(path):
     try:
         return requests.delete(f"{BACKEND}{path}",
-                               headers=_auth_headers(), verify=VERIFY_SSL, timeout=10)
+                               headers=_auth_headers(), verify=VERIFY_SSL, timeout=30)
     except Exception as e:
         st.error(f"Request error: {e}")
         return None

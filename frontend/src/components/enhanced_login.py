@@ -447,6 +447,7 @@ def render_notification_badge():
         )
         if st.sidebar.button("View Notifications"):
             st.session_state.view = "notifications"
+            st.query_params["view"] = "notifications"
             st.rerun()
 
 

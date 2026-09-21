@@ -55,11 +55,13 @@ def render_vuln_overview():
     with col1:
         if st.button("🎯 Sniper Scan", key="sniper_scan_btn", use_container_width=True, help="Fast targeted scan of common ports"):
             st.session_state.view = "sniper_scan"
+            st.query_params["view"] = "sniper_scan"
             st.rerun()
     
     with col2:
         if st.button("🌐 Multi Scan", key="multi_scan_btn", use_container_width=True, help="Comprehensive scan with multiple techniques"):
             st.session_state.view = "multi_scan"
+            st.query_params["view"] = "multi_scan"
             st.rerun()
     
     st.markdown("---")

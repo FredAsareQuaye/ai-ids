@@ -35,6 +35,7 @@ def render_detail_view(alert_id):
     if came_from == 'logs':
         if st.button("← Back to Logs", type="secondary"):
             st.session_state.view = 'logs_overview'
+            st.query_params["view"] = "logs_overview"
             if 'selected_alert' in st.session_state:
                 del st.session_state.selected_alert
             if 'came_from' in st.session_state:

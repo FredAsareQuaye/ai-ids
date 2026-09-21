@@ -907,6 +907,7 @@ class VulnerabilityScanner:
         # Create a back button that goes to vulnerability overview instead of dashboard
         if st.button("◀️ Back to Overview"):
             st.session_state.view = "vuln_overview"
+            st.query_params["view"] = "vuln_overview"
             st.rerun()
         
         # Check if we should start a scan immediately
@@ -1067,6 +1068,7 @@ class VulnerabilityScanner:
                         )
                         # Redirect to overview page
                         st.session_state.view = "vuln_overview"
+                        st.query_params["view"] = "vuln_overview"
                         st.rerun()
                     else:
                         st.error(f"Error saving scan: {scan_id}")

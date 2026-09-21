@@ -50,6 +50,7 @@ class SniperScanPage:
         with col_back:
             if st.button("← Back to Overview", key="back_to_overview_top", use_container_width=True):
                 st.session_state.view = "vuln_overview"
+                st.query_params["view"] = "vuln_overview"
                 st.rerun()
 
         page_header("Sniper Scan", "Focused single-target vulnerability assessment via Nmap", badge="Single Host")

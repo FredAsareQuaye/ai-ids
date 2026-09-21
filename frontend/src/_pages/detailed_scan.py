@@ -24,6 +24,7 @@ def render_detailed_scan(scan_id=None):
         st.error("No scan selected. Please select a scan from the vulnerability overview page.")
         if st.button("← Back to Overview"):
             st.session_state.view = "vuln_overview"
+            st.query_params["view"] = "vuln_overview"
             st.rerun()
         return
     
@@ -461,17 +462,20 @@ def render_detailed_scan(scan_id=None):
                 st.session_state.scan_name = f"Re-scan of {scan_name}"
                 st.session_state.scan_type = "sniper"  # Default to sniper scan
                 st.session_state.view = "vuln_overview"
+                st.query_params["view"] = "vuln_overview"
                 st.rerun()
         
         # Add a back button at the bottom
         if st.button("← Back to Overview", key="back_button_bottom"):
             st.session_state.view = "vuln_overview"
+            st.query_params["view"] = "vuln_overview"
             st.rerun()
             
     except Exception as e:
         st.error(f"Error rendering detailed scan view: {str(e)}")
         if st.button("← Back to Overview", key="error_back_button"):
             st.session_state.view = "vuln_overview"
+            st.query_params["view"] = "vuln_overview"
             st.rerun()
 
 if __name__ == "__main__":

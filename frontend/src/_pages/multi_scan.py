@@ -45,6 +45,7 @@ class MultiScanPage:
         with col1:
             if st.button("← Back to Overview", key="back_to_overview_multi", use_container_width=True):
                 st.session_state.view = "vuln_overview"
+                st.query_params["view"] = "vuln_overview"
                 st.rerun()
         
         from components.page_style import inject_page_css, page_header

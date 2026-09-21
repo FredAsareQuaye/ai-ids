@@ -14,7 +14,7 @@ BACKEND = BACKEND_BASE
 
 def _get(path: str):
     try:
-        r = requests.get(f"{BACKEND}{path}", verify=False, timeout=10)
+        r = requests.get(f"{BACKEND}{path}", verify=False, timeout=30)
         r.raise_for_status()
         return r.json()
     except Exception as e:

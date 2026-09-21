@@ -194,6 +194,7 @@ def render_main_dashboard():
         if ai_enabled:
             if st.button("🧠 AI Insights", key="ai_insights_btn", help="AI Insights"):
                 st.session_state.view = "logs_overview"
+                st.query_params["view"] = "logs_overview"
                 st.rerun()
         
         # Show current time 
@@ -279,6 +280,7 @@ def render_main_dashboard():
                         with col_b:
                             if st.button("📝", key=f"view_{threat.get('id', hash(json.dumps(threat)))}"):
                                 st.session_state.view = "detail"
+                                st.query_params["view"] = "detail"
                                 st.session_state.selected_alert = threat
                                 st.rerun()
                 
@@ -480,6 +482,7 @@ def render_logs_overview():
     def on_alert_click(alert):
         st.session_state.selected_alert = alert
         st.session_state.view = 'detail'
+        st.query_params["view"] = "detail"
         st.rerun()
     
     # Get AI mode from settings
@@ -964,6 +967,7 @@ def create_top_menu():
                                 
                                 st.session_state.previous_view = st.session_state.get("view", "main")
                                 st.session_state.view = "ai_analysis"
+                                st.query_params["view"] = "ai_analysis"
                         else:
                             # Regular Logs Overview logic
                             session = create_session()
@@ -974,6 +978,7 @@ def create_top_menu():
                             else:
                                 st.session_state.overview_logs_data = response.json()
                                 st.session_state.view = "logs_overview"
+                                st.query_params["view"] = "logs_overview"
                         
                         st.session_state.menu_expanded = False
                         st.rerun()
@@ -994,6 +999,7 @@ def main():
         # First time initialization
         st.session_state.session_initialized = True
         st.session_state.view = 'main'  # Will be overridden if not authenticated
+        st.query_params["view"] = "main"
         # Auto-refresh is now seamless and always enabled
         st.session_state.sidebar_selection = "Dashboard"
         st.session_state.selected_alert = None
@@ -1012,6 +1018,7 @@ def main():
     # Preserve current view on refresh
     if 'view' not in st.session_state:
         st.session_state.view = 'main'
+        st.query_params["view"] = "main"
     
     # Always load settings to ensure they're up to date
     from _pages.settings import load_settings

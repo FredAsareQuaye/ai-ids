@@ -25,6 +25,7 @@ def render_enhanced_detail_view(log_id=None, alert_data=None):
     if came_from == 'logs':
         if st.button("← Back to Logs", type="secondary"):
             st.session_state.view = 'logs_overview'
+            st.query_params["view"] = "logs_overview"
             if 'selected_log_id' in st.session_state:
                 del st.session_state.selected_log_id
             if 'came_from' in st.session_state:
@@ -33,6 +34,7 @@ def render_enhanced_detail_view(log_id=None, alert_data=None):
     elif came_from == 'dashboard':
         if st.button("← Back to Dashboard", type="secondary"):
             st.session_state.view = 'main'
+            st.query_params["view"] = "main"
             if 'selected_log_id' in st.session_state:
                 del st.session_state.selected_log_id
             st.rerun()

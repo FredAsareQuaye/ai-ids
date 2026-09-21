@@ -16,7 +16,7 @@ _DARK = dict(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="#0d1117",
 
 def _get(path, params=None):
     try:
-        r = requests.get(f"{BACKEND}{path}", params=params, verify=VERIFY_SSL, timeout=10)
+        r = requests.get(f"{BACKEND}{path}", params=params, verify=VERIFY_SSL, timeout=30)
         if r.status_code == 200:
             return r.json()
     except Exception as e:

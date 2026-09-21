@@ -305,7 +305,7 @@ def render_agent_dashboard():
     st.subheader("Connected Monitoring Agents")
 
     try:
-        resp = _requests.get(f"{BACKEND}/agents", verify=VERIFY_SSL, timeout=10)
+        resp = _requests.get(f"{BACKEND}/agents", verify=VERIFY_SSL, timeout=30)
         if resp.status_code != 200:
             st.warning(f"Backend returned status {resp.status_code}")
             return

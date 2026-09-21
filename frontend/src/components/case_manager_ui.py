@@ -29,7 +29,7 @@ def _auth_headers():
 
 def _get(path, params=None):
     try:
-        r = requests.get(f"{BACKEND}{path}", params=params, verify=VERIFY_SSL, timeout=10)
+        r = requests.get(f"{BACKEND}{path}", params=params, verify=VERIFY_SSL, timeout=30)
         if r.status_code == 200:
             return r.json()
     except Exception as e:
@@ -39,7 +39,7 @@ def _get(path, params=None):
 def _post(path, payload):
     try:
         return requests.post(f"{BACKEND}{path}", json=payload,
-                             headers=_auth_headers(), verify=VERIFY_SSL, timeout=10)
+                             headers=_auth_headers(), verify=VERIFY_SSL, timeout=30)
     except Exception as e:
         st.error(f"Request error: {e}")
         return None
@@ -47,7 +47,7 @@ def _post(path, payload):
 def _put(path, payload):
     try:
         return requests.put(f"{BACKEND}{path}", json=payload,
-                            headers=_auth_headers(), verify=VERIFY_SSL, timeout=10)
+                            headers=_auth_headers(), verify=VERIFY_SSL, timeout=30)
     except Exception as e:
         st.error(f"Request error: {e}")
         return None
