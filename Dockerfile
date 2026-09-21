@@ -1,45 +1,40 @@
 FROM python:3.11-slim
 
-LABEL org.opencontainers.image.title="AI-IDS Backend" \
-      org.opencontainers.image.description="FastAPI backend for the AI-IDS Security Operations Platform"
+LABEL org.opencontainers.image.title="AI-IDS Frontend" \
+      org.opencontainers.image.description="Streamlit frontend for the AI-IDS Security Operations Platform"
 
-# System dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        openssl \
-        iptables \
         curl \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 # Install Python dependencies
-COPY docker/requirements-backend.txt /tmp/requirements.txt
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+COPY docker/requirements-frontend.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir --default-timeout=300 --retries=5 -r /tmp/requirements.txt
 
-# Copy server source code
-COPY server/src/ ./src/
+# Copy frontend source code
+COPY frontend/src/ ./src/
 
-# Copy seed data (read-only reference; runtime data goes to /app/data via volume)
-COPY server/data/ ./seed/
+# Copy frontend data if it exists (auth DB etc.)
+RUN mkdir -p /app/data
+
+# Override Streamlit config (no SSL, Docker-compatible)
+RUN mkdir -p /root/.streamlit
+COPY docker/streamlit-config.toml /root/.streamlit/config.toml
 
 # Copy entrypoint
-COPY docker/entrypoint-backend.sh /entrypoint.sh
+COPY docker/entrypoint-frontend.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Persistent directories (override with Docker volumes in production)
-VOLUME ["/app/db", "/app/data", "/app/certs", "/app/backups", "/app/reports"]
-
-ENV PYTHONPATH=/app \
-    SERVER_PORT=8000 \
-    LOG_LEVEL=INFO \
+ENV SIEM_BACKEND_URL=https://backend:8000 \
     AI_ENABLED=true \
-    DB_PATH=/app/db/siem.db \
-    SSL_KEYFILE=/app/certs/key.pem \
-    SSL_CERTFILE=/app/certs/cert.pem
+    OPENROUTER_MODEL=deepseek/deepseek-chat \
+    PORT=8501
 
-EXPOSE 8000
+EXPOSE ${PORT:-8501}
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=20s --retries=3 \
-    CMD curl -fsk https://localhost:8000/api/v1/stats || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=5 \
+    CMD curl -f http://localhost:${PORT:-8501}/_stcore/health || exit 1
 
 ENTRYPOINT ["/entrypoint.sh"]
