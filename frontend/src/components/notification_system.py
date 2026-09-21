@@ -83,11 +83,11 @@ def render_notification_dashboard():
 
     with col_notifs:
         st.subheader("Recent Notifications")
-        _render_user_notifications(user["id"])
+        _render_user_notifications(user.get("user_id") or user.get("id"))
 
     with col_prefs:
         st.subheader("Notification Settings")
-        _render_notification_preferences(user["id"])
+        _render_notification_preferences(user.get("user_id") or user.get("id"))
 
 
 def _render_user_notifications(user_id):
@@ -190,7 +190,7 @@ def render_live_log_monitor():
     auto_refresh = st.checkbox("Auto-refresh (5 seconds)", value=True)
     if auto_refresh:
         st.components.v1.html(
-            '<script>setTimeout(function(){window.parent.location.reload();},5000);</script>',
+            '<script>setTimeout(function(){window.parent.location.href=window.parent.location.href;},5000);</script>',
             height=0,
         )
 

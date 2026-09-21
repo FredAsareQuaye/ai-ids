@@ -82,7 +82,10 @@ def main():
     url_view = st.query_params.get("view")
     if url_view:
         st.session_state.view = url_view
-    elif "view" not in st.session_state:
+    elif "view" in st.session_state:
+        # Keep current view but sync it back to URL
+        st.query_params["view"] = st.session_state.view
+    else:
         st.session_state.view = "overview"
         st.query_params["view"] = "overview"
     if "settings" not in st.session_state:

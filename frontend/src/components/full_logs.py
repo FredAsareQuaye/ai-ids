@@ -238,6 +238,10 @@ def render_full_logs(session, backend_url, on_alert_click):
         return  # Let the main app handle the detail view
     
     # Fetch all logs - try API first, then file fallback
+    page = 1
+    total_pages = 1
+    start_idx = 0
+    end_idx = 0
     try:
         with st.spinner("Loading logs..."):
             threats = []
